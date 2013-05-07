@@ -1,0 +1,21 @@
+NAME="bc"
+VERSION=1.06.95
+RELEASE=1
+CATEGORY="Math"
+SUMMARY="Arbitrary precision calculator language"
+DESCRIPTION="bc is an arbitrary precision numeric processing language. Syntax
+is similar to C, but differs in many substantial areas. It supports interactive
+execution of statements. bc is a utility included in the POSIX P1003.2/D11
+draft standard."
+HOMEPAGE="http://www.gnu.org/software/bc/"
+SRC_URI="ftp://alpha.gnu.org/pub/gnu/bc/bc-${VERSION}.tar.bz2"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/bc.git/plain/bc-1.06-dc_ibase.patch
+	http://pkgs.fedoraproject.org/cgit/bc.git/plain/bc-1.06.95-memleak.patch
+	http://pkgs.fedoraproject.org/cgit/bc.git/plain/bc-1.06.95-matlib.patch
+	http://pkgs.fedoraproject.org/cgit/bc.git/plain/bc-1.06.95-sigintmasking.patch
+"
+
+CYGCONF_ARGS="--with-readline"
+
+DIFF_EXCLUDES="*.info"
